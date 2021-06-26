@@ -1,0 +1,32 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+
+int main() {
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */   
+    
+    string s;
+    int n;
+    cin>>n;
+    for(int j=0;j<n;j++){
+    cin>>s;
+    int l=s.length();
+    int count=0;
+    int ans=0;
+    for(int i=0;i<l;i++){
+        if(s.at(i)=='<')  
+        count++;
+        else
+        count--;
+        if(count<0)         // if no of closed brackets exceed the no of open brackets it is invalid
+        break;
+        if(count==0)        // if no of closed brackest equals no of open brackets
+        ans=i+1;
+    }
+    cout<<ans<<"\n";}
+    return 0;
+}
