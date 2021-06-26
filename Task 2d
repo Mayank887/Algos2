@@ -1,0 +1,33 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+
+int main() {
+    int n;
+   cin>>n;
+   if(n<2||n>100)
+   return -1;
+   int a[n];
+   int b[n-1];
+   for(int i=0;i<n-1;i++){
+       cin>>b[i];               // Creating an array b of size n-1
+   }
+   a[0]=b[0];
+   for(int i=0;i<n-2;i++){
+       if(b[i+1]<b[i])
+       a[i+1]=b[i+1];          // Assigning the greatest possible value of the two to the array a
+       else
+       a[i+1]=b[i];
+       
+   }
+   a[n-1]=b[n-2];
+   int sum=0;
+   for(int i=0;i<n;i++){       // Finding the sum
+   sum+=a[i];}
+   cout<<sum; 
+    return 0;
+}
