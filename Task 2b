@@ -1,0 +1,38 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+
+int main()
+{
+    unsigned int n;
+    cin>>n;
+    unsigned int arr[n+1];
+    unsigned int q;
+    cin>>q;
+    for(int i=0;i<n+1;i++){
+        arr[i]=i;                   // initialisng the desired array
+    }
+    for(int i=0;i<q;i++){
+        unsigned int l,r;
+        unsigned long v;
+        cin>>l>>r>>v;
+        if(l>=1 && r<=n && l<=r){
+        for(int j=l;j<=r;j++){   
+            arr[j]=arr[j]+v;        // adding the value between the given array indices
+        }}
+        else
+        return -1;
+    }
+    unsigned long max=arr[0];
+    for(int i=0;i<n+1;i++){
+        if(arr[i]>max)
+        max=arr[i];           // finding the max element in the array
+    }
+    cout<<max;
+
+    return 0;
+}
